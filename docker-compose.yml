@@ -14,3 +14,15 @@ services:
     - ./portfolio/src:/srv/app/client/src
     - ./portfolio/public:/srv/app/client/public
   command: "npm run start:client"
+  
+ server:
+  build: ./server
+  expose: 
+    - 5000
+  ports: 
+    - 5000:5000
+  environment:
+    - CHOKIDAR_USEPOLLING=true
+  volumes: 
+    - ./server:/srv/app/server
+  command: "npm run start:server"
