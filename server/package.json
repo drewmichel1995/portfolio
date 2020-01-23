@@ -6,11 +6,13 @@
   "dependencies": {
     "nodemon": "^2.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-	"start:server": "nodemon -L server.js"
+    "start:server": "node server.js"
   },
   "author": "",
   "license": "ISC"
