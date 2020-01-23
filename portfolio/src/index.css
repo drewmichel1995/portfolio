@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Redefining css styles with variables */
+.about-me {
+  /* Navbar variables */
+  --Navbar-backgroundColor: #383d45;
+  --Navbar-color: #b9bfc7;
+  --Navbar--hover-color: #fed136;
+  --Navbar--backgroundColor: rgba(250, 250, 250, 0.9);
+  --Navbar--boxShadow: rgba(0, 0, 0, 0.124);
+  /* Hero variables */
+  --Hero__Header-fontSize: 75px;
+  --Hero__Header-fontStyle: normal;
+  --Hero__Header-color: #fff;
+  --Hero__Header-fontWeight: 700;
+  --Hero__Header--phone-fontSize: 30px;
+  --Hero__SubHeader-fontSize: 40px;
+  --Hero__SubHeader-color: #fff;
+  --Hero__SubHeader-fontStyle: italic;
+  --Hero__SubHeader--phone-fontSize: 20px;
+  --Hero__Button-color: #fff;
+  --Hero__Button-backgroundColor: #fed136;
+}
