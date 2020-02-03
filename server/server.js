@@ -1,14 +1,22 @@
-const http = require('http');
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const mongo = require('mongoose');
 
-const hostname = '0.0.0.0';
-const port = 5000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello Worldzzz');
+mongo.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
+const db = mongo.connection;
+db.on('error', error => console.log(error));
+db.on('open', () => console.log('connected to Database'));
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.use(express.json());
+
+const portfolioinfoRouter = require('./routes/portfolioinfo');
+app.use('/portfolioinfo', portfolioinfoRouter);
+
+/*const dockerRouter = require('./routes/docker');
+app.use('/docker', dockerRouter);*/
+
+app.listen(3000, () => console.log(process.env.DATABASE_URL));

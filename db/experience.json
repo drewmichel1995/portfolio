@@ -1,0 +1,44 @@
+{
+  "title": "Front End",
+  "fields": [
+    { "name": "JavaScript", "icon": "javascript" },
+    { "name": "HTML", "icon": "html5" },
+    { "name": "CSS", "icon": "css3" },
+    { "name": "React", "icon": "react" },
+    { "name": "Angular", "icon": "angular_simple" },
+    { "name": "JQuery", "icon": "jquery" }
+  ]
+}
+{
+  "title": "Back End",
+  "fields": [
+    { "name": "Java", "icon": "java" },
+    { "name": "Python", "icon": "python" },
+    { "name": "C#", "icon": "windows" },
+    { "name": "C++", "icon": "code_badge" },
+    { "name": "Swift", "icon": "swift" },
+    { "name": "NodeJS", "icon": "nodejs" }
+  ]
+}
+{
+  "title": "Database",
+  "fields": [
+    { "name": "MongoDB", "icon": "mongodb" },
+    { "name": "MS SQL", "icon": "msql_server" },
+    { "name": "SQL Lite", "icon": "sqllite" },
+    { "name": "Firebase", "icon": "firebase" },
+    { "name": "MySQL", "icon": "mysql" },
+    { "name": "CosmoDB", "icon": "aws" }
+  ]
+}
+{
+  "title": "Other",
+  "fields": [
+    { "name": "Nginx", "icon": "nginx" },
+    { "name": "Docker", "icon": "docker" },
+    { "name": "Git", "icon": "git" },
+    { "name": "Bash", "icon": "terminal" },
+    { "name": "Powershell", "icon": "terminal_badge" },
+    { "name": "SysAdmin", "icon": "linux" }
+  ]
+}
