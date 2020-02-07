@@ -1,0 +1,53 @@
+.stack-col {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  border-style: none !important;
+}
+
+.stack-body {
+  padding: 0px !important;
+}
+
+.stack-toggle {
+  white-space: nowrap;
+}
+
+.stack-title {
+  padding: 0px !important;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.skills-list {
+  white-space: nowrap;
+  border-bottom-right-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+  justify-content: center;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.skills-card-header {
+  border-bottom-right-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .collapse {
+    display: none;
+  }
+
+  .show {
+    display: block !important;
+  }
+}

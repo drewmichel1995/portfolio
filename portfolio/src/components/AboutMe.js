@@ -1,39 +1,39 @@
-import React, { Component } from 'react';
-import { Hero, Navbar } from '@front10/landing-page-book/dist/components';
-import { Col, Row } from 'react-bootstrap';
-import IntroductionCard from './IntroductionCard';
-import SkillsCard from './SkillsCard';
-import ExperienceCard from './ExperienceCard';
-import ProjectCard from './ProjectCard';
+import React, { Component } from "react";
+import { Hero, Navbar } from "@front10/landing-page-book/dist/components";
+import { Col, Row } from "react-bootstrap";
+import IntroductionCard from "./IntroductionCard";
+import SkillsCard from "./SkillsCard";
+import ExperienceCard from "./ExperienceCard";
+import ProjectCard from "./ProjectCard";
 
 const project = {
-  title: 'Subdomain Scanner',
+  title: "Subdomain Scanner",
   stack: [
     {
-      name: 'Python',
-      icon: 'python'
+      name: "Python",
+      icon: "python"
     },
     {
-      name: 'Angular',
-      icon: 'angular_simple'
+      name: "Angular",
+      icon: "angular_simple"
     },
     {
-      name: 'SQL Lite',
-      icon: 'sqllite'
+      name: "SQL Lite",
+      icon: "sqllite"
     },
     {
-      name: 'NGINX',
-      icon: 'nginx'
+      name: "NGINX",
+      icon: "nginx"
     },
     {
-      name: 'Docker',
-      icon: 'docker'
+      name: "Docker",
+      icon: "docker"
     }
   ],
   description:
-    'A Subdomain Scanner Web UI being served by a custom Python server using the OWASP developed AMASS Subdomain Scanner utility.',
-  githubLink: 'https://github.com/drewmichel1995/PenTest-Docker',
-  demoLink: ''
+    "A Subdomain Scanner Web UI being served by a custom Python server using the OWASP developed AMASS Subdomain Scanner utility.",
+  githubLink: "https://github.com/drewmichel1995/PenTest-Docker",
+  demoLink: ""
 };
 
 class AboutMe extends React.Component {
@@ -47,9 +47,9 @@ class AboutMe extends React.Component {
   }
 
   componentDidMount() {
-    var url = '/server/portfolioinfo';
+    var url = "/server/portfolioinfo";
 
-    fetch(url, { method: 'get' })
+    fetch(url, { method: "get" })
       .then(res => res.json())
       .then(result => {
         this.setState({
@@ -64,13 +64,13 @@ class AboutMe extends React.Component {
     const { profile, skills, experience } = this.state;
 
     return (
-      <div className="about-me" style={{ backgroundColor: 'black' }}>
+      <div className="about-me" style={{ backgroundColor: "black" }}>
         <Navbar brandLink="https://github.com" />
 
         <Col>
           <IntroductionCard person={profile} />
 
-          <Row style={{ padding: '2rem' }}>
+          <Row className="justify-content-center">
             {skills.map(skill => (
               <SkillsCard data={skill} />
             ))}

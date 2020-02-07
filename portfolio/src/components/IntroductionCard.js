@@ -1,16 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { Col, Row, Card } from 'react-bootstrap';
-import { SocialIcon } from 'react-social-icons';
-import profileImg from '../images/profile.jpg';
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { Col, Row, Card } from "react-bootstrap";
+import { SocialIcon } from "react-social-icons";
+import profileImg from "../images/profile.jpg";
+import "./style.css";
 
 const Container = styled(motion.div)`
   width: 400px;
   margin: 4rem auto auto auto;
   padding: 3rem;
   border-radius: 1rem;
-  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-family: "Arial", "Helvetica", sans-serif;
   background-color: #fff;
   position: relative;
 `;
@@ -41,14 +42,14 @@ const variants = {
     visible: {
       scaleY: 1,
       transition: {
-        when: 'beforeChildren',
+        when: "beforeChildren",
         staggerChildren: 0.2
       }
     }
   },
   scaleAndRot: {
-    hidden: { scale: 0, rotate: '90deg' },
-    visible: { scale: 1, rotate: '0deg' }
+    hidden: { scale: 0, rotate: "90deg" },
+    visible: { scale: 1, rotate: "0deg" }
   },
   opacity: {
     hidden: { opacity: 0 },
@@ -62,7 +63,7 @@ const variants = {
 
 const IntroductionCard = ({ person }) => {
   return (
-    <Row style={{ padding: '2rem' }}>
+    <Row style={{ padding: "2rem" }}>
       <Container
         initial="hidden"
         animate="visible"
@@ -80,16 +81,12 @@ const IntroductionCard = ({ person }) => {
           <SubHeading>{person.jobTitle}</SubHeading>
 
           <SubHeading>{person.location}</SubHeading>
-          <Row className="justify-content-md-center">
-            <Col>
-              <SocialIcon url="https://github.com/drewmichel1995" />
-            </Col>
-            <Col>
-              <SocialIcon url="https://www.linkedin.com/in/drew-michel-4a1766123" />
-            </Col>
-            <Col>
-              <SocialIcon network="email" />
-            </Col>
+          <Row className="nopadding justify-content-center">
+            <SocialIcon url="https://github.com/drewmichel1995" />
+
+            <SocialIcon url="https://www.linkedin.com/in/drew-michel-4a1766123" />
+
+            <SocialIcon network="email" />
           </Row>
         </InfoContainer>
       </Container>

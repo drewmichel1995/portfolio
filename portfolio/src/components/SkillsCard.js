@@ -1,39 +1,48 @@
-import React from 'react';
-import { Card, ListGroup, Row, Col } from 'react-bootstrap';
-import DevIcon from 'devicon-react-svg';
+import React from "react";
+import {
+  Card,
+  ListGroup,
+  Row,
+  Col,
+  Container,
+  Accordion
+} from "react-bootstrap";
+import DevIcon from "devicon-react-svg";
+import "./style.css";
 
 const SkillsCard = ({ data }) => {
   return (
-    <Col sm>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          padding: '2rem'
-        }}
-      >
-        <Card style={{ width: '15rem', borderRadius: '1rem' }}>
-          <Card.Header>
+    <div className="skills-container">
+      <Accordion defaultActiveKey="0">
+        <Card style={{ width: "15rem", borderRadius: "1rem" }}>
+          <Accordion.Toggle
+            as={Card.Header}
+            eventKey="0"
+            className="text-center skills-card-header"
+          >
             <strong>{data.title}</strong>
-          </Card.Header>
-          <ListGroup variant="flush">
-            {data.fields.map(item => (
-              <ListGroup.Item style={{ borderRadius: '1rem' }}>
-                <Col lg={true}>
-                  <Row style={{ justifyContent: 'center' }}>
-                    <Col>
-                      <DevIcon icon={item.icon} style={{ width: '2rem' }} />
-                    </Col>
-
-                    <Col>{item.name}</Col>
-                  </Row>
-                </Col>
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="0">
+            <ListGroup>
+              {data.fields.map(item => (
+                <ListGroup.Item className="skills-list">
+                  <Container className="align-items-center">
+                    <Row>
+                      <Col md={4}>
+                        <DevIcon icon={item.icon} style={{ width: "2rem" }} />
+                      </Col>
+                      <Col md={4} className="text-center">
+                        {item.name}
+                      </Col>
+                    </Row>
+                  </Container>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          </Accordion.Collapse>
         </Card>
-      </div>
-    </Col>
+      </Accordion>
+    </div>
   );
 };
 

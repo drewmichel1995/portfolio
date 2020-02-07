@@ -1,66 +1,70 @@
-import React from 'react';
+import React from "react";
 import {
   Card,
   ListGroup,
   Row,
   Col,
-  ButtonToolbar,
+  ButtonGroup,
   Button,
   Accordion,
   Badge
-} from 'react-bootstrap';
-import ImageHelper from './ImageHelper';
-import DevIcon from 'devicon-react-svg';
-import StackComponent from './StackComponent';
+} from "react-bootstrap";
+import ImageHelper from "./ImageHelper";
+import DevIcon from "devicon-react-svg";
+import StackComponent from "./StackComponent";
+import "./style.css";
 
 const ProjectCard = ({ data }) => {
   const isMobile = window.innerWidth < 480;
 
   return (
-    <Row className="justify-content-md-center" style={{ padding: '2rem' }}>
+    <Row className="justify-content-md-center" style={{ padding: "2rem" }}>
       <Col md={{ span: 6 }}>
         <Accordion>
-          <Card style={{ borderRadius: '1rem' }} className="text-center">
+          <Card style={{ borderRadius: "1rem" }} className="text-center">
             <Card.Header>
               <Row className="align-items-center">
-                <Col className="order-3 order-lg-1">
-                  <Button
-                    variant="info"
-                    style={{ whiteSpace: 'nowrap' }}
-                    href={data.githubLink}
-                  >
-                    View Code
-                  </Button>
-                </Col>
-                <Col className="order-1 order-lg-2">
+                <Col className="stack-title">
                   <h3>
-                    <Badge pill variant="dark">
-                      {data.title}
-                    </Badge>
+                    <div className="stack-title">{data.title}</div>
                   </h3>
 
-                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                  <Accordion.Toggle
+                    as={Button}
+                    variant="link"
+                    eventKey="0"
+                    className="stack-toggle"
+                  >
                     {data.stack.map(item => (
-                      <DevIcon icon={item.icon} style={{ width: '2rem' }} />
+                      <DevIcon icon={item.icon} style={{ width: "2rem" }} />
                     ))}
                   </Accordion.Toggle>
                 </Col>
-                <Col className="order-2 order-lg-3">
-                  <Button variant="primary" style={{ whiteSpace: 'nowrap' }}>
-                    View Demo
-                  </Button>
+                <Col className="nopadding">
+                  <ButtonGroup className="mt-3">
+                    <Button
+                      variant="link"
+                      style={{ whiteSpace: "nowrap" }}
+                      href={data.githubLink}
+                    >
+                      View Code
+                    </Button>
+                    <Button variant="link" style={{ whiteSpace: "nowrap" }}>
+                      View Demo
+                    </Button>
+                  </ButtonGroup>
                 </Col>
               </Row>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
-              <Card.Body>
+              <Card.Body className="stack-body">
                 <StackComponent data={data.stack} />
               </Card.Body>
             </Accordion.Collapse>
             <Card.Body>
-              <Row style={{ justifyContent: 'center' }}>
+              <Row style={{ justifyContent: "center" }}>
                 <Row>
-                  <Col style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
+                  <Col style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
                     <Card.Text>{data.description}</Card.Text>
                   </Col>
                 </Row>

@@ -1,17 +1,17 @@
-import React from 'react';
-import { Card, ListGroup, Row, Col } from 'react-bootstrap';
-import ImageHelper from './ImageHelper';
-import DevIcon from 'devicon-react-svg';
+import React from "react";
+import { Card, ListGroup, Row, Col } from "react-bootstrap";
+import ImageHelper from "./ImageHelper";
+import DevIcon from "devicon-react-svg";
 
 const isMobile = window.innerWidth < 480;
-const talign = isMobile ? 'center' : 'left';
-const toppad = isMobile ? '0rem' : '0rem';
+const talign = isMobile ? "center" : "left";
+const toppad = isMobile ? "0rem" : "0rem";
 
 const ExperienceCard = ({ data }) => {
   return (
-    <Row className="justify-content-md-center" style={{ padding: '2rem' }}>
+    <Row className="justify-content-center" style={{ padding: "2rem" }}>
       <Col md={{ span: 6 }}>
-        <Card style={{ borderRadius: '1rem' }}>
+        <Card style={{ borderRadius: "1rem" }}>
           <Card.Header>
             <Row className="justify-content-center align-items-center">
               <ImageHelper mode={data.mode} />
@@ -19,8 +19,8 @@ const ExperienceCard = ({ data }) => {
               <Col
                 style={{
                   paddingTop: toppad,
-                  paddingLeft: '3rem',
-                  paddingRight: '3rem'
+                  paddingLeft: "3rem",
+                  paddingRight: "3rem"
                 }}
               >
                 <Row style={{ textAlign: talign }}>
@@ -49,7 +49,7 @@ const ExperienceCard = ({ data }) => {
           <Card.Body>
             <Row className="align-items-center">
               <Row style={{ textAlign: talign }}>
-                <Col style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
+                <Col style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
                   <Card.Text>{data.description}</Card.Text>
                 </Col>
               </Row>
