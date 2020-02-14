@@ -63,7 +63,7 @@ const variants = {
 
 const IntroductionCard = ({ person }) => {
   return (
-    <Row style={{ padding: "2rem" }}>
+    <Row style={{ padding: "2rem" }} className="justify-content-center">
       <Container
         initial="hidden"
         animate="visible"
@@ -76,9 +76,9 @@ const IntroductionCard = ({ person }) => {
         />
 
         <InfoContainer>
-          <Heading>{person.name}</Heading>
+          <Heading className="no-wrap">{person.name}</Heading>
 
-          <SubHeading>{person.jobTitle}</SubHeading>
+          <SubHeading className="no-wrap">{person.jobTitle}</SubHeading>
 
           <SubHeading>{person.location}</SubHeading>
           <Row className="nopadding justify-content-center">

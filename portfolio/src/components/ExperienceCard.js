@@ -12,43 +12,40 @@ const ExperienceCard = ({ data }) => {
     <Row className="justify-content-center" style={{ padding: "2rem" }}>
       <Col md={{ span: 6 }}>
         <Card style={{ borderRadius: "1rem" }}>
-          <Card.Header>
+          <Card.Header className="experience-card-header">
             <Row className="justify-content-center align-items-center">
-              <ImageHelper mode={data.mode} />
-
+              <Col xs="auto">
+                <ImageHelper mode={data.mode} />
+              </Col>
               <Col
                 style={{
                   paddingTop: toppad,
                   paddingLeft: "3rem",
                   paddingRight: "3rem"
                 }}
+                xs="auto"
               >
-                <Row style={{ textAlign: talign }}>
-                  <Col lg={6}>
-                    <Card.Title>{data.org}</Card.Title>
-                  </Col>
-                  <Col>
-                    <Card.Title> {data.jobTitle}</Card.Title>
-                  </Col>
+                <Row className="justify-content-center align-items-center">
+                  <Card.Title className="no-wrap text-align-center">
+                    {data.jobTitle}
+                  </Card.Title>
                 </Row>
-                <Row style={{ textAlign: talign }}>
-                  <Col lg={6}>
-                    <Card.Subtitle className="mb-2 text-muted">
-                      {data.dates}
-                    </Card.Subtitle>
-                  </Col>
-                  <Col>
-                    <Card.Subtitle className="mb-2 text-muted">
-                      {data.location}
-                    </Card.Subtitle>
-                  </Col>
+                <Row className="align-items-center justify-content-center">
+                  <Card.Subtitle className="mb-2 text-muted no-wrap text-align-center">
+                    {data.dates}
+                  </Card.Subtitle>
+                </Row>
+                <Row className="align-items-center justify-content-center">
+                  <Card.Subtitle className="mb-2 text-muted no-wrap text-align-center">
+                    {data.location}
+                  </Card.Subtitle>
                 </Row>
               </Col>
             </Row>
           </Card.Header>
           <Card.Body>
             <Row className="align-items-center">
-              <Row style={{ textAlign: talign }}>
+              <Row className="text-align-center">
                 <Col style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
                   <Card.Text>{data.description}</Card.Text>
                 </Col>

@@ -1,15 +1,13 @@
 import React from "react";
 import {
   Card,
-  ListGroup,
   Row,
   Col,
   ButtonGroup,
   Button,
-  Accordion,
-  Badge
+  Accordion
 } from "react-bootstrap";
-import ImageHelper from "./ImageHelper";
+
 import DevIcon from "devicon-react-svg";
 import StackComponent from "./StackComponent";
 import "./style.css";

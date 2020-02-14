@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Hero, Navbar } from "@front10/landing-page-book/dist/components";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Carousel } from "react-bootstrap";
 import IntroductionCard from "./IntroductionCard";
 import SkillsCard from "./SkillsCard";
 import ExperienceCard from "./ExperienceCard";
@@ -70,16 +70,20 @@ class AboutMe extends React.Component {
         <Col>
           <IntroductionCard person={profile} />
 
-          <Row className="justify-content-center">
+          <Carousel>
             {skills.map(skill => (
-              <SkillsCard data={skill} />
+              <Carousel.Item className="d-lg-none">
+                <SkillsCard data={skill} />
+              </Carousel.Item>
             ))}
-          </Row>
-
-          {experience.map(exp => (
-            <ExperienceCard data={exp} />
-          ))}
-
+          </Carousel>
+          <Carousel>
+            {experience.map(exp => (
+              <Carousel.Item>
+                <ExperienceCard data={exp} />
+              </Carousel.Item>
+            ))}
+          </Carousel>
           <ProjectCard data={project} />
         </Col>
       </div>
