@@ -1,4 +1,4 @@
-FROM node:8.7.0-alpine
+FROM arm32v7/node:8.7.0-alpine
 
 RUN mkdir -p /srv/app/server
 WORKDIR /srv/app/server

@@ -27,14 +27,14 @@ services:
 
   db:
     container_name: portfolio_mongo
-    image: mongo:latest
+    image: arm32v7/mongo:latest
     expose:
       - '27017'
     restart: always
 
   proxy:
     container_name: portfolio_proxy
-    image: nginx:1.16.1
+    image: arm32v7/nginx:1.16.1
     ports:
       - '80:80'
       - '443:443'
