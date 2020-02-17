@@ -27,7 +27,7 @@ services:
 
   db:
     container_name: portfolio_mongo
-    image: nonoroazoro/rpi-mongo:latest
+    image: andresvidal/rpi3-mongodb3:latest
     expose:
       - '27017'
     restart: always
