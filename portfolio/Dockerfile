@@ -1,4 +1,4 @@
-FROM arm32v7/node:8.7.0-alpine
+FROM node:10.19.0-buster
 
 RUN mkdir -p /srv/app/client
 WORKDIR /srv/app/client
