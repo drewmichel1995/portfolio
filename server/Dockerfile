@@ -1,4 +1,4 @@
-FROM node:10.19.0-buster
+FROM node:latest
 
 RUN mkdir -p /srv/app/server
 WORKDIR /srv/app/server
