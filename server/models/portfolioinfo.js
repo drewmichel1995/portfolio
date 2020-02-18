@@ -1,4 +1,4 @@
-const mongo = require('mongoose');
+const mongo = require("mongoose");
 
 const portfolioinfoSchema = new mongo.Schema({
   profile: {
@@ -26,9 +26,15 @@ const portfolioinfoSchema = new mongo.Schema({
       dates: String,
       location: String,
       description: String,
-      mode: String
+      mode: String,
+      skills: [
+        {
+          name: String,
+          icon: String
+        }
+      ]
     }
   ]
 });
 
-module.exports = mongo.model('PortfolioInfo', portfolioinfoSchema);
+module.exports = mongo.model("PortfolioInfo", portfolioinfoSchema);

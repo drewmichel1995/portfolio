@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   client:
@@ -11,7 +11,7 @@ services:
     volumes:
       - ./portfolio/src:/srv/app/client/src
       - ./portfolio/public:/srv/app/client/public
-    command: 'npm run start:client'
+    command: "npm run start:client"
 
   server:
     build: ./server
@@ -23,22 +23,22 @@ services:
       - ./server:/srv/app/server
       - /srv/app/server/node_modules/
     restart: always
-    command: 'npm run start:server'
+    command: "npm run start:server"
 
   db:
     container_name: portfolio_mongo
-    image: arm64v8/mongo:latest
+    image: mongo:latest
     expose:
-      - '27017'
+      - "27017"
     restart: always
 
   proxy:
     container_name: portfolio_proxy
     image: nginx:latest
     ports:
-      - '80:80'
-      - '443:443'
-      - '27017:27017'
+      - "80:80"
+      - "443:443"
+      - "27017:27017"
     restart: always
 
     volumes:
