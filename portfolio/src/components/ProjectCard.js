@@ -16,7 +16,7 @@ const ProjectCard = ({ data }) => {
   const isMobile = window.innerWidth < 480;
 
   return (
-    <Row className="justify-content-md-center" style={{ padding: "2rem" }}>
+    <Row className="justify-content-center" style={{ padding: "2rem" }}>
       <Col md={{ span: 6 }}>
         <Accordion>
           <Card style={{ borderRadius: "1rem" }} className="text-center">

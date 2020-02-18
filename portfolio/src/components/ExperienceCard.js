@@ -6,7 +6,8 @@ import {
   Tabs,
   Tab,
   ListGroup,
-  Container
+  Container,
+  Nav
 } from "react-bootstrap";
 import ImageHelper from "./ImageHelper";
 import StackComponent from "./StackComponent";
@@ -26,101 +27,68 @@ const ExperienceCard = ({ data }) => {
   return (
     <Row className="justify-content-center" style={{ padding: "2rem" }}>
       <Col md={{ span: 6 }}>
-        <Card style={{ borderRadius: "1rem" }}>
-          <Card.Header className="experience-card-header">
-            <Row className="justify-content-center align-items-center">
-              <Col xs="auto">
-                <ImageHelper mode={data.mode} />
-              </Col>
-              <Col
-                style={{
-                  paddingTop: toppad,
-                  paddingLeft: "3rem",
-                  paddingRight: "3rem"
-                }}
-                xs="auto"
-              >
-                <Row className="justify-content-center align-items-center">
-                  <Card.Title className="no-wrap text-align-center">
-                    {data.jobTitle}
-                  </Card.Title>
-                </Row>
-                <Row className="align-items-center justify-content-center">
-                  <Card.Subtitle className="mb-2 text-muted no-wrap text-align-center">
-                    {data.dates}
-                  </Card.Subtitle>
-                </Row>
-                <Row className="align-items-center justify-content-center">
-                  <Card.Subtitle className="mb-2 text-muted no-wrap text-align-center">
-                    {data.location}
-                  </Card.Subtitle>
-                </Row>
-              </Col>
-            </Row>
-          </Card.Header>
-          <Tabs
-            defaultActiveKey="description"
-            id="uncontrolled-tab-example"
-            variant="pills"
-            className="justify-content-center"
-          >
-            <Tab
-              eventKey="description"
-              title="Description"
-              className="align-items-center"
+        <Tab.Container id="left-tabs-example" defaultActiveKey="description">
+          <Card style={{ borderRadius: "1rem" }}>
+            <Card.Header
+              className="experience-card-header"
+              style={{ overflow: "hidden" }}
             >
-              <Card.Body>
-                <Row>
-                  <Col style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
-                    <Card.Text>{data.description}</Card.Text>
-                  </Col>
-                </Row>
-              </Card.Body>
-            </Tab>
-            <Tab
-              eventKey="stack"
-              title="Stack"
-              className="align-items-center justify-content-center"
-              style={{ borderRadius: "1rem" }}
-            >
-              <Card.Body className="justify-content-center">
-                <ListGroup>
+              <Row className="justify-content-center align-items-center">
+                <Col xs="auto">
+                  <ImageHelper mode={data.mode} />
+                </Col>
+                <Col
+                  style={{
+                    paddingTop: toppad,
+                    paddingLeft: "3rem",
+                    paddingRight: "3rem"
+                  }}
+                  xs="auto"
+                >
+                  <Row className="justify-content-center align-items-center">
+                    <Card.Title className="no-wrap text-align-center">
+                      {data.jobTitle}
+                    </Card.Title>
+                  </Row>
+                  <Row className="align-items-center justify-content-center">
+                    <Card.Subtitle className="mb-2 text-muted no-wrap text-align-center">
+                      {data.dates}
+                    </Card.Subtitle>
+                  </Row>
+                  <Row className="align-items-center justify-content-center">
+                    <Card.Subtitle className="mb-2 text-muted no-wrap text-align-center">
+                      {data.location}
+                    </Card.Subtitle>
+                  </Row>
+                </Col>
+              </Row>
+              <Nav fill activeKey="description" variant="tabs">
+                <Nav.Item>
+                  <Nav.Link eventKey="description">Description</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="tech">Technologies</Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Card.Header>
+            <Card.Body>
+              <Tab.Content className="justify-content-center">
+                <Tab.Pane eventKey="description">
                   <Row>
                     <Col>
-                      {firstHalf.map(item => (
-                        <Row className="justify-content-center">
-                          <DevIcon icon={item.icon} style={{ width: "2rem" }} />
-                          {item.name}
-                        </Row>
-                      ))}
-                    </Col>
-                    <Col>
-                      {secondHalf.map(item => (
-                        <Row className="justify-content-center">
-                          <DevIcon icon={item.icon} style={{ width: "2rem" }} />
-                          {item.name}
-                        </Row>
-                      ))}
+                      <Card.Text>{data.description}</Card.Text>
                     </Col>
                   </Row>
-                </ListGroup>
-              </Card.Body>
-            </Tab>
-            <Tab
-              eventKey="project-highlights"
-              title="Project Highlights"
-              className="align-items-center"
-            >
-              <Card.Body>
-                <Row>
-                  <Col style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
-                    <Card.Text>Stack will go here</Card.Text>
+                </Tab.Pane>
+                <Tab.Pane eventKey="tech">
+                  <Col className="justify-content-center">
+                    <StackComponent data={data.skills} />
                   </Col>
-                </Row>
-              </Card.Body>
-            </Tab>
-          </Tabs>
-        </Card>
+                </Tab.Pane>
+              </Tab.Content>
+            </Card.Body>
+          </Card>
+        </Tab.Container>
       </Col>
     </Row>
   );

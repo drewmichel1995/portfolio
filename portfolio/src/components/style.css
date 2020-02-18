@@ -52,10 +52,15 @@
 
 .experience-card-header {
   padding: 0.75rem 0rem !important;
+  border-bottom: none !important;
 }
 
 .no-border {
   border: none !important;
+}
+
+.no-border-bottom {
+  border-bottom: none !important;
 }
 
 @media only screen and (max-width: 600px) {

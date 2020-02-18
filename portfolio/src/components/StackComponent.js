@@ -14,14 +14,18 @@ const StackComponent = ({ data }) => {
         horizontal="lg"
       >
         {data.map(item => (
-          <ListGroup.Item className="stack-col">
-            <Col>
-              <Badge pill variant="dark">
-                {item.name}
-              </Badge>
+          <ListGroup.Item
+            className="stack-col text-align-left no-wrap"
+            as={Col}
+          >
+            <DevIcon
+              icon={item.icon}
+              style={{ width: "3rem", paddingRight: "1rem" }}
+            />
 
-              <DevIcon icon={item.icon} style={{ width: "2rem" }} />
-            </Col>
+            <Badge pill variant="dark">
+              {item.name}
+            </Badge>
           </ListGroup.Item>
         ))}
       </ListGroup>
