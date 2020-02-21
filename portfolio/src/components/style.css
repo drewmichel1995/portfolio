@@ -53,6 +53,7 @@
 .experience-card-header {
   padding: 0.75rem 0rem !important;
   border-bottom: none !important;
+  width: 100%;
 }
 
 .no-border {

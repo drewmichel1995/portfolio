@@ -28,12 +28,12 @@ const ExperienceCard = ({ data }) => {
     <Row className="justify-content-center" style={{ padding: "2rem" }}>
       <Col md={{ span: 6 }}>
         <Tab.Container id="left-tabs-example" defaultActiveKey="description">
-          <Card style={{ borderRadius: "1rem" }}>
+          <Card style={{ borderRadius: "1rem" }} className="align-items-center">
             <Card.Header
               className="experience-card-header"
               style={{ overflow: "hidden" }}
             >
-              <Row className="justify-content-center align-items-center">
+              <Row className="justify-content-center align-items-center mb-1">
                 <Col xs="auto">
                   <ImageHelper mode={data.mode} />
                 </Col>
@@ -81,7 +81,7 @@ const ExperienceCard = ({ data }) => {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="tech">
-                  <Col className="justify-content-center">
+                  <Col>
                     <StackComponent data={data.skills} />
                   </Col>
                 </Tab.Pane>
