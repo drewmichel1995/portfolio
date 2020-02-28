@@ -5,6 +5,7 @@ import IntroductionCard from "./IntroductionCard";
 import SkillsCard from "./SkillsCard";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
+import Element from "react-scroll";
 
 const project = {
   title: "Subdomain Scanner",
@@ -64,22 +65,25 @@ class AboutMe extends React.Component {
     const { profile, skills, experience } = this.state;
 
     return (
-      <div className="about-me" style={{ backgroundColor: "black" }}>
-        <Navbar brandLink="https://github.com" />
-
+      <div className="about-me">
         <Col>
           <IntroductionCard person={profile} />
+          <Element id="skills" name="skills">
+            <SkillsCard data={skills} />
+          </Element>
 
-          <SkillsCard data={skills} />
-
-          <Carousel interval={null}>
-            {experience.map(exp => (
-              <Carousel.Item>
-                <ExperienceCard data={exp} />
-              </Carousel.Item>
-            ))}
-          </Carousel>
-          <ProjectCard data={project} />
+          <Element id="experience" name="experience">
+            <Carousel interval={null}>
+              {experience.map(exp => (
+                <Carousel.Item>
+                  <ExperienceCard data={exp} />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Element>
+          <Element id="projects" name="projects">
+            <ProjectCard data={project} />
+          </Element>
         </Col>
       </div>
     );

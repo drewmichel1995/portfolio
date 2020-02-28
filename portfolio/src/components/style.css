@@ -45,11 +45,6 @@
   padding-right: 0.25rem;
 }
 
-.skills-card-header {
-  border-bottom-right-radius: 1rem !important;
-  border-bottom-left-radius: 1rem !important;
-}
-
 .experience-card-header {
   padding: 0.75rem 0rem !important;
   border-bottom: none !important;
@@ -72,4 +67,23 @@
   .show {
     display: block !important;
   }
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+#bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
 }
