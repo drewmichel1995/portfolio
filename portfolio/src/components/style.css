@@ -87,3 +87,13 @@ ul li {
   height: 100%;
   width: 100%;
 }
+
+.social-row {
+  height: 30px !important;
+  width: 30px !important;
+  margin: 2px;
+}
+
+.nav-item-link {
+  color: gainsboro !important;
+}

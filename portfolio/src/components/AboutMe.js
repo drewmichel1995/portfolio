@@ -1,40 +1,41 @@
-import React, { Component } from "react";
-import { Hero, Navbar } from "@front10/landing-page-book/dist/components";
-import { Col, Row, Carousel } from "react-bootstrap";
-import IntroductionCard from "./IntroductionCard";
-import SkillsCard from "./SkillsCard";
-import ExperienceCard from "./ExperienceCard";
-import ProjectCard from "./ProjectCard";
-import Element from "react-scroll";
+import React, { Component } from 'react';
+import { Hero, Navbar } from '@front10/landing-page-book/dist/components';
+import { Col, Row, Carousel } from 'react-bootstrap';
+import IntroductionCard from './IntroductionCard';
+import SkillsCard from './SkillsCard';
+import ExperienceCard from './ExperienceCard';
+import ProjectCard from './ProjectCard';
+import Element from 'react-scroll';
+import PortfolioNavbar from './PortfolioNavbar';
 
 const project = {
-  title: "Subdomain Scanner",
+  title: 'Subdomain Scanner',
   stack: [
     {
-      name: "Python",
-      icon: "python"
+      name: 'Python',
+      icon: 'python'
     },
     {
-      name: "Angular",
-      icon: "angular_simple"
+      name: 'Angular',
+      icon: 'angular_simple'
     },
     {
-      name: "SQL Lite",
-      icon: "sqllite"
+      name: 'SQL Lite',
+      icon: 'sqllite'
     },
     {
-      name: "NGINX",
-      icon: "nginx"
+      name: 'NGINX',
+      icon: 'nginx'
     },
     {
-      name: "Docker",
-      icon: "docker"
+      name: 'Docker',
+      icon: 'docker'
     }
   ],
   description:
-    "A Subdomain Scanner Web UI being served by a custom Python server using the OWASP developed AMASS Subdomain Scanner utility.",
-  githubLink: "https://github.com/drewmichel1995/PenTest-Docker",
-  demoLink: ""
+    'A Subdomain Scanner Web UI being served by a custom Python server using the OWASP developed AMASS Subdomain Scanner utility.',
+  githubLink: 'https://github.com/drewmichel1995/PenTest-Docker',
+  demoLink: ''
 };
 
 class AboutMe extends React.Component {
@@ -48,9 +49,9 @@ class AboutMe extends React.Component {
   }
 
   componentDidMount() {
-    var url = "/server/portfolioinfo";
+    var url = '/server/portfolioinfo';
 
-    fetch(url, { method: "get" })
+    fetch(url, { method: 'get' })
       .then(res => res.json())
       .then(result => {
         this.setState({
@@ -66,24 +67,15 @@ class AboutMe extends React.Component {
 
     return (
       <div className="about-me">
+        <PortfolioNavbar />
         <Col>
           <IntroductionCard person={profile} />
-          <Element id="skills" name="skills">
-            <SkillsCard data={skills} />
-          </Element>
 
-          <Element id="experience" name="experience">
-            <Carousel interval={null}>
-              {experience.map(exp => (
-                <Carousel.Item>
-                  <ExperienceCard data={exp} />
-                </Carousel.Item>
-              ))}
-            </Carousel>
-          </Element>
-          <Element id="projects" name="projects">
-            <ProjectCard data={project} />
-          </Element>
+          <SkillsCard data={skills} />
+
+          <ExperienceCard experience={experience} />
+
+          <ProjectCard data={project} />
         </Col>
       </div>
     );

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Card,
   Row,
@@ -6,75 +6,77 @@ import {
   ButtonGroup,
   Button,
   Accordion
-} from "react-bootstrap";
+} from 'react-bootstrap';
 
-import DevIcon from "devicon-react-svg";
-import StackComponent from "./StackComponent";
-import "./style.css";
+import DevIcon from 'devicon-react-svg';
+import StackComponent from './StackComponent';
+import './style.css';
 
-function ProjectCard(data) {
+const ProjectCard = ({ data }) => {
   const isMobile = window.innerWidth < 480;
 
   return (
-    <React.Fragment>
-      <Row className="justify-content-center" style={{ padding: "2rem" }}>
-        <Col md={{ span: 6 }}>
-          <Accordion>
-            <Card style={{ borderRadius: "1rem" }} className="text-center">
-              <Card.Header>
-                <Row className="align-items-center">
-                  <Col className="stack-title">
-                    <h3>
-                      <div className="stack-title">{data.title}</div>
-                    </h3>
+    <Row
+      className="justify-content-center"
+      style={{ padding: '2rem' }}
+      id="projects"
+    >
+      <Col md={{ span: 6 }}>
+        <Accordion>
+          <Card style={{ borderRadius: '1rem' }} className="text-center">
+            <Card.Header>
+              <Row className="align-items-center">
+                <Col className="stack-title">
+                  <h3>
+                    <div className="stack-title">{data.title}</div>
+                  </h3>
 
-                    <Accordion.Toggle
-                      as={Button}
+                  <Accordion.Toggle
+                    as={Button}
+                    variant="link"
+                    eventKey="0"
+                    className="stack-toggle"
+                  >
+                    {data.stack.map(item => (
+                      <DevIcon icon={item.icon} style={{ width: '2rem' }} />
+                    ))}
+                  </Accordion.Toggle>
+                </Col>
+                <Col className="nopadding">
+                  <ButtonGroup className="mt-3">
+                    <Button
                       variant="link"
-                      eventKey="0"
-                      className="stack-toggle"
+                      style={{ whiteSpace: 'nowrap' }}
+                      href={data.githubLink}
                     >
-                      {data.stack.map(item => (
-                        <DevIcon icon={item.icon} style={{ width: "2rem" }} />
-                      ))}
-                    </Accordion.Toggle>
-                  </Col>
-                  <Col className="nopadding">
-                    <ButtonGroup className="mt-3">
-                      <Button
-                        variant="link"
-                        style={{ whiteSpace: "nowrap" }}
-                        href={data.githubLink}
-                      >
-                        View Code
-                      </Button>
-                      <Button variant="link" style={{ whiteSpace: "nowrap" }}>
-                        View Demo
-                      </Button>
-                    </ButtonGroup>
-                  </Col>
-                </Row>
-              </Card.Header>
-              <Accordion.Collapse eventKey="0">
-                <Card.Body className="stack-body">
-                  <StackComponent data={data.stack} />
-                </Card.Body>
-              </Accordion.Collapse>
-              <Card.Body>
-                <Row style={{ justifyContent: "center" }}>
-                  <Row>
-                    <Col style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
-                      <Card.Text>{data.description}</Card.Text>
-                    </Col>
-                  </Row>
-                </Row>
+                      View Code
+                    </Button>
+                    <Button variant="link" style={{ whiteSpace: 'nowrap' }}>
+                      View Demo
+                    </Button>
+                  </ButtonGroup>
+                </Col>
+              </Row>
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body className="stack-body">
+                <StackComponent data={data.stack} />
               </Card.Body>
-            </Card>
-          </Accordion>
-        </Col>
-      </Row>
-    </React.Fragment>
+            </Accordion.Collapse>
+            <Card.Body>
+              <Row style={{ justifyContent: 'center' }}>
+                <Row>
+                  <Col style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
+                    <Card.Text>{data.description}</Card.Text>
+                  </Col>
+                </Row>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Accordion>
+      </Col>
+    </Row>
   );
-}
+};
 
 export default ProjectCard;

@@ -1,7 +1,7 @@
-import React from "react";
-import { Navbar, Nav, Form, Button, FormControl } from "react-bootstrap";
-import Scroll from "react-scroll";
-const ScrollLink = Scroll.ScrollLink;
+import React from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
+import SocialRow from './SocialRow';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 const PortfolioNavbar = () => {
   return (
@@ -10,31 +10,55 @@ const PortfolioNavbar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#skills">
-            <ScrollLink to="skills" spy={true} smooth={true}>
-              Skills
-            </ScrollLink>
-          </Nav.Link>
-          <Nav.Link href="#expereince">
-            <ScrollLink to="skills" spy={true} smooth={true}>
-              Experience
-            </ScrollLink>
-          </Nav.Link>
-          <Nav.Link href="#home">
-            <ScrollLink to="skills" spy={true} smooth={true}>
-              Education
-            </ScrollLink>
-          </Nav.Link>
-          <Nav.Link href="#projects">
-            <ScrollLink to="skills" spy={true} smooth={true}>
-              Projects
-            </ScrollLink>
-          </Nav.Link>
+          <Link
+            activeClass="active"
+            to="skills"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="nav-item-link nav-link"
+          >
+            Skills
+          </Link>
+
+          <Link
+            activeClass="active"
+            to="experience"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="nav-item-link nav-link"
+          >
+            Experience
+          </Link>
+
+          <Link
+            activeClass="active"
+            to="education"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="nav-item-link nav-link"
+          >
+            Education
+          </Link>
+
+          <Link
+            activeClass="active"
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="nav-item-link nav-link"
+          >
+            Projects
+          </Link>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form>
+        <SocialRow />
       </Navbar.Collapse>
     </Navbar>
   );
