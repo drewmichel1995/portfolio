@@ -1,13 +1,17 @@
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import SocialRow from './SocialRow';
-import ImageHelper from './ImageHelper';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import React from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import SocialRow from "./SocialRow";
+import ImageHelper from "./ImageHelper";
+import { Link, animateScroll as scroll } from "react-scroll";
+
+function scrollToTop() {
+  scroll.scrollToTop();
+}
 
 const PortfolioNavbar = ({ name }) => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand onClick={scrollToTop}>
         <ImageHelper mode="icon" width="3rem" /> {name}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -97,6 +97,7 @@ ul li {
 
 .nav-item-link {
   color: gainsboro !important;
+  cursor: pointer;
 }
 
 .navbar {
@@ -106,4 +107,13 @@ ul li {
 .navbar-brand {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  cursor: pointer;
+}
+
+.cursor-point {
+  cursor: pointer;
+}
+
+.skill-card-col {
+  flex-grow: 0 !important;
 }
