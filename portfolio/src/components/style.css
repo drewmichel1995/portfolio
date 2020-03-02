@@ -92,8 +92,18 @@ ul li {
   height: 30px !important;
   width: 30px !important;
   margin: 2px;
+  color: white;
 }
 
 .nav-item-link {
   color: gainsboro !important;
+}
+
+.navbar {
+  padding: 0rem 1rem !important;
+}
+
+.navbar-brand {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }

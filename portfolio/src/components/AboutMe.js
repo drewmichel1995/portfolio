@@ -67,7 +67,7 @@ class AboutMe extends React.Component {
 
     return (
       <div className="about-me">
-        <PortfolioNavbar />
+        <PortfolioNavbar name={profile.name} />
         <Col>
           <IntroductionCard person={profile} />
 
