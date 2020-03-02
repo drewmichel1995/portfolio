@@ -19,7 +19,6 @@ const ExpandedSkillsCard = ({ data }) => {
       id="skills"
       noGutters={gutters}
     >
-      {console.log(gutters)}
       {data.map((skill, idx) => (
         <Col className="skill-card-col">
           <Card style={{ width: "15rem", borderRadius: "1rem" }}>

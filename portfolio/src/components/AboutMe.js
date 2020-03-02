@@ -4,7 +4,6 @@ import IntroductionCard from "./IntroductionCard";
 import SkillsCard from "./SkillsCard";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
-import PortfolioNavbar from "./PortfolioNavbar";
 
 const project = {
   title: "Subdomain Scanner",
@@ -65,7 +64,6 @@ class AboutMe extends React.Component {
 
     return (
       <div className="about-me">
-        <PortfolioNavbar name={profile.name} />
         <Col>
           <IntroductionCard person={profile} />
 

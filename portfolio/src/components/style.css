@@ -101,7 +101,7 @@ ul li {
 }
 
 .navbar {
-  padding: 0rem 1rem !important;
+  padding: 0rem 0.125rem !important;
 }
 
 .navbar-brand {
@@ -116,4 +116,9 @@ ul li {
 
 .skill-card-col {
   flex-grow: 0 !important;
+}
+
+.section-header {
+  color: white;
+  text-align: center !important;
 }
