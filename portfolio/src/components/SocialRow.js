@@ -1,6 +1,7 @@
-import React from 'react';
-import { Row } from 'react-bootstrap';
-import { SocialIcon } from 'react-social-icons';
+import React from "react";
+import { Row } from "react-bootstrap";
+import { SocialIcon } from "react-social-icons";
+import EmailModal from "./EmailModel";
 
 const SocialRow = () => {
   return (
@@ -17,7 +18,7 @@ const SocialRow = () => {
         bgColor="#dcdcdc"
       />
 
-      <SocialIcon network="email" className="social-row" bgColor="#dcdcdc" />
+      <EmailModal />
     </Row>
   );
 };

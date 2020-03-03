@@ -122,3 +122,19 @@ ul li {
   color: white;
   text-align: center !important;
 }
+
+.email-color {
+  background-color: #212529;
+}
+
+.white-text {
+  color: white;
+}
+
+.close {
+  color: white !important;
+}
+
+.email-modal {
+  background-color: gainsboro;
+}
