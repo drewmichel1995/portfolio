@@ -121,6 +121,7 @@ ul li {
 .section-header {
   color: white;
   text-align: center !important;
+  padding-top: 5px;
 }
 
 .email-color {
@@ -137,4 +138,20 @@ ul li {
 
 .email-modal {
   background-color: gainsboro;
+}
+
+.experience-card {
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+.projects-card {
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+.introduction-card {
+  padding-top: 14rem;
+}
+
+.skills-card {
+  margin-top: 13rem;
 }

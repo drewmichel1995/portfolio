@@ -21,7 +21,7 @@ const ProjectCard = ({ data }) => {
         Projects
       </h2>
       <hr />
-      <Row className="justify-content-center" style={{ padding: "2rem" }}>
+      <Row className="justify-content-center projects-card">
         <Col md={{ span: 6 }}>
           <Accordion>
             <Card style={{ borderRadius: "1rem" }} className="text-center">

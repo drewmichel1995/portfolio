@@ -5,7 +5,7 @@ import "./style.css";
 
 const SkillsCard = ({ data }) => {
   return (
-    <div id="skills">
+    <div id="skills" className="skills-card">
       <h2 className="section-header">Skills</h2>
       <hr />
       <div className="skills-container">

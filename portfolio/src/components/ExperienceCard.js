@@ -15,7 +15,7 @@ const ExperienceCard = ({ experience }) => {
       <Carousel interval={null}>
         {experience.map(data => (
           <Carousel.Item>
-            <Row className="justify-content-center" style={{ padding: "2rem" }}>
+            <Row className="justify-content-center experience-card">
               <Col md={{ span: 6 }}>
                 <Tab.Container
                   id="left-tabs-example"
