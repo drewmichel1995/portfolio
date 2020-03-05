@@ -1,20 +1,23 @@
-require('dotenv').config();
-const express = require('express');
+require("dotenv").config();
+const express = require("express");
 const app = express();
-const mongo = require('mongoose');
+const mongo = require("mongoose");
 
 mongo.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 const db = mongo.connection;
-db.on('error', error => console.log(error));
-db.on('open', () => console.log('connected to Database'));
+db.on("error", error => console.log(error));
+db.on("open", () => console.log("connected to Database"));
 
 app.use(express.json());
 
-const portfolioinfoRouter = require('./routes/portfolioinfo');
-app.use('/portfolioinfo', portfolioinfoRouter);
+const portfolioinfoRouter = require("./routes/portfolioinfo");
+app.use("/portfolioinfo", portfolioinfoRouter);
+
+const emailRouter = require("./routes/email");
+app.use("/email", emailRouter);
 
 /*const dockerRouter = require('./routes/docker');
 app.use('/docker', dockerRouter);*/

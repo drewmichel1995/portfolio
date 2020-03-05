@@ -1,7 +1,7 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import { SocialIcon } from "react-social-icons";
-import EmailModal from "./EmailModel";
+import EmailModal from "./EmailModal";
 
 const SocialRow = () => {
   return (

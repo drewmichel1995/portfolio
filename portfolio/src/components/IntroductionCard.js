@@ -10,11 +10,15 @@ const IntroductionCard = ({ person }) => {
     <Container>
       <Row className="justify-content-center align-items-center introduction-card d-none d-md-flex">
         <Col className="justify-content-center text-right">
-          <ImageHelper mode="profile" width="15rem" />
+          <ImageHelper mode="profile" width="20rem" />
         </Col>
         <Col className="justify-content-center white-text">
-          <h2 className="no-wrap">{person.jobTitle}</h2>
-          <h2>{person.location}</h2>
+          <h2 className="no-wrap">
+            <u>{person.jobTitle}</u>
+          </h2>
+          <h2>
+            <u>{person.location}</u>
+          </h2>
         </Col>
       </Row>
       <Row className="justify-content-center align-items-center introduction-card d-md-none">

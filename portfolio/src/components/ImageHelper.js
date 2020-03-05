@@ -2,13 +2,15 @@ import saicImg from "../images/saic-logo.png";
 import averittImg from "../images/averitt.png";
 import profileImg from "../images/profile.jpg";
 import iconImg from "../images/favicon.png";
+import tntechImg from "../images/tntech.png";
 import React from "react";
 
 const iconObj = {
   "saic": saicImg,
   "averitt": averittImg,
   "profile": profileImg,
-  "icon": iconImg
+  "icon": iconImg,
+  "tntech": tntechImg
 };
 
 class ImageHelper extends React.Component {

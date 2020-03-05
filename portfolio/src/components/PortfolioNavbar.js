@@ -1,23 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import SocialRow from "./SocialRow";
 import ImageHelper from "./ImageHelper";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-function scrollToTop() {
-  scroll.scrollToTop();
-}
+function PortfolioNavbar({ name }) {
+  const [expandNav, setExpand] = useState(false);
 
-const PortfolioNavbar = ({ name }) => {
+  function scrollToTop() {
+    setExpand(false);
+    scroll.scrollToTop();
+  }
+
+  function toggleExpand() {
+    setExpand(!expandNav);
+  }
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+    <Navbar
+      bg="dark"
+      variant="dark"
+      expand="lg"
+      fixed="top"
+      expanded={expandNav}
+    >
       <Navbar.Brand onClick={scrollToTop}>
         <ImageHelper mode="icon" width="3rem" /> {name}
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleExpand} />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Link
+          <Nav.Item
+            as={Link}
             activeClass="active"
             to="skills"
             spy={true}
@@ -25,11 +39,13 @@ const PortfolioNavbar = ({ name }) => {
             offset={-70}
             duration={500}
             className="nav-item-link nav-link"
+            onClick={toggleExpand}
           >
             Skills
-          </Link>
+          </Nav.Item>
 
-          <Link
+          <Nav.Item
+            as={Link}
             activeClass="active"
             to="experience"
             spy={true}
@@ -37,11 +53,13 @@ const PortfolioNavbar = ({ name }) => {
             offset={-70}
             duration={500}
             className="nav-item-link nav-link"
+            onClick={toggleExpand}
           >
             Experience
-          </Link>
+          </Nav.Item>
 
-          <Link
+          <Nav.Item
+            as={Link}
             activeClass="active"
             to="education"
             spy={true}
@@ -49,11 +67,13 @@ const PortfolioNavbar = ({ name }) => {
             offset={-70}
             duration={500}
             className="nav-item-link nav-link"
+            onClick={toggleExpand}
           >
             Education
-          </Link>
+          </Nav.Item>
 
-          <Link
+          <Nav.Item
+            as={Link}
             activeClass="active"
             to="projects"
             spy={true}
@@ -61,14 +81,15 @@ const PortfolioNavbar = ({ name }) => {
             offset={-70}
             duration={500}
             className="nav-item-link nav-link"
+            onClick={toggleExpand}
           >
             Projects
-          </Link>
+          </Nav.Item>
         </Nav>
         <SocialRow />
       </Navbar.Collapse>
     </Navbar>
   );
-};
+}
 
 export default PortfolioNavbar;

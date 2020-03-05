@@ -118,5 +118,53 @@
         { "name": "Remote Troubleshooting", "icon": "windows" }
       ]
     }
+  ],
+  "education": [
+    {
+      "mode": "tntech",
+      "organization": "Tennessee Technological University",
+      "credential": "Bachelor of Computer Science",
+      "suppCredential": "Concentration in Cyber Security",
+      "dates": "August 2014 - May 2018",
+      "location": "Cookeville, TN",
+      "description": "I spent my time at Tennessee Tech learning about computers",
+      "classes": [
+        { "name": "Design of Algorithms" },
+        { "name": "Object Oriented Programming" },
+        { "name": "Data Structures" },
+        { "name": "Operating Systems" },
+        { "name": "Reverse Engineering Malware" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Subdomain Scanner",
+      "stack": [
+        {
+          "name": "Python",
+          "icon": "python"
+        },
+        {
+          "name": "Angular",
+          "icon": "angular_simple"
+        },
+        {
+          "name": "SQL Lite",
+          "icon": "sqllite"
+        },
+        {
+          "name": "NGINX",
+          "icon": "nginx"
+        },
+        {
+          "name": "Docker",
+          "icon": "docker"
+        }
+      ],
+      "description": "A Subdomain Scanner Web UI being served by a custom Python server using the OWASP developed AMASS Subdomain Scanner utility.",
+      "githubLink": "https://github.com/drewmichel1995/PenTest-Docker",
+      "demoLink": ""
+    }
   ]
 }

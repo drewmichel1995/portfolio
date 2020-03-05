@@ -34,6 +34,27 @@ const portfolioinfoSchema = new mongo.Schema({
         }
       ]
     }
+  ],
+  education: [
+    {
+      mode: String,
+      organization: String,
+      credential: String,
+      suppCredential: String,
+      dates: String,
+      location: String,
+      description: String,
+      classes: [{ name: String }]
+    }
+  ],
+  projects: [
+    {
+      title: String,
+      stack: [{ name: String, icon: String }],
+      description: String,
+      githubLink: String,
+      demoLink: String
+    }
   ]
 });
 

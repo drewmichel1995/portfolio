@@ -4,36 +4,7 @@ import IntroductionCard from "./IntroductionCard";
 import SkillsCard from "./SkillsCard";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
-
-const project = {
-  title: "Subdomain Scanner",
-  stack: [
-    {
-      name: "Python",
-      icon: "python"
-    },
-    {
-      name: "Angular",
-      icon: "angular_simple"
-    },
-    {
-      name: "SQL Lite",
-      icon: "sqllite"
-    },
-    {
-      name: "NGINX",
-      icon: "nginx"
-    },
-    {
-      name: "Docker",
-      icon: "docker"
-    }
-  ],
-  description:
-    "A Subdomain Scanner Web UI being served by a custom Python server using the OWASP developed AMASS Subdomain Scanner utility.",
-  githubLink: "https://github.com/drewmichel1995/PenTest-Docker",
-  demoLink: ""
-};
+import EducationCard from "./EducationCard";
 
 class AboutMe extends React.Component {
   constructor(props) {
@@ -41,7 +12,9 @@ class AboutMe extends React.Component {
     this.state = {
       profile: {},
       skills: [],
-      experience: []
+      experience: [],
+      projects: [],
+      education: []
     };
   }
 
@@ -54,13 +27,17 @@ class AboutMe extends React.Component {
         this.setState({
           profile: result.profile,
           skills: result.skills,
-          experience: result.experience
+          experience: result.experience,
+          education: result.education,
+          projects: result.projects
         });
       });
+
+    console.log(this.state.profile);
   }
 
   render() {
-    const { profile, skills, experience } = this.state;
+    const { profile, skills, experience, education, projects } = this.state;
 
     return (
       <div className="about-me">
@@ -71,7 +48,9 @@ class AboutMe extends React.Component {
 
           <ExperienceCard experience={experience} />
 
-          <ProjectCard data={project} />
+          <EducationCard education={education} />
+
+          <ProjectCard projects={projects} />
         </Col>
       </div>
     );
