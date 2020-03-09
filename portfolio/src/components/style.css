@@ -120,9 +120,8 @@ ul li {
 }
 
 .section-header {
-  color: white;
   text-align: center !important;
-  padding-top: 5px;
+  padding-top: 20px;
 }
 
 .email-color {
@@ -155,4 +154,8 @@ ul li {
 
 .skills-card {
   margin-top: 13rem;
+}
+
+.read-more-button {
+  color: blue !important;
 }

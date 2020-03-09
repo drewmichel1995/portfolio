@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import { Navbar, Nav } from "react-bootstrap";
-import SocialRow from "./SocialRow";
-import ImageHelper from "./ImageHelper";
-import { Link, animateScroll as scroll } from "react-scroll";
+import React, { useState } from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
+import SocialRow from './SocialRow';
+import ImageHelper from './ImageHelper';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 function PortfolioNavbar({ name }) {
   const [expandNav, setExpand] = useState(false);
 
   function scrollToTop() {
-    setExpand(false);
+    let width = window.innerWidth;
+    width < 992 ? setExpand(false) : setExpand(expandNav);
     scroll.scrollToTop();
   }
 
   function toggleExpand() {
-    setExpand(!expandNav);
+    let width = window.innerWidth;
+    width < 992 ? setExpand(!expandNav) : setExpand(expandNav);
   }
 
   return (

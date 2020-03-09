@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Card,
   Row,
@@ -7,29 +7,27 @@ import {
   Button,
   Accordion,
   Carousel
-} from "react-bootstrap";
-
-import DevIcon from "devicon-react-svg";
-import StackComponent from "./StackComponent";
-import "./style.css";
+} from 'react-bootstrap';
+import ReadMoreReact from 'read-more-react';
+import DevIcon from 'devicon-react-svg';
+import StackComponent from './StackComponent';
+import './style.css';
 
 const ProjectCard = ({ projects }) => {
-  const isMobile = window.innerWidth < 480;
-
   return (
-    <div>
-      <h2 className="section-header" id="projects">
+    <div className="section-header">
+      <h2 id="projects" className="white-text">
         Projects
       </h2>
       <hr />
-      <Carousel interval={null}>
+      <Carousel interval={null} controls={false} touch={true}>
         {projects.map(data => (
           <Carousel.Item>
             <Row className="justify-content-center projects-card">
               <Col md={{ span: 6 }}>
                 <Accordion>
                   <Card
-                    style={{ borderRadius: "1rem" }}
+                    style={{ borderRadius: '1rem' }}
                     className="text-center"
                   >
                     <Card.Header>
@@ -48,7 +46,7 @@ const ProjectCard = ({ projects }) => {
                             {data.stack.map(item => (
                               <DevIcon
                                 icon={item.icon}
-                                style={{ width: "2rem" }}
+                                style={{ width: '2rem' }}
                               />
                             ))}
                           </Accordion.Toggle>
@@ -57,14 +55,14 @@ const ProjectCard = ({ projects }) => {
                           <ButtonGroup className="mt-3">
                             <Button
                               variant="link"
-                              style={{ whiteSpace: "nowrap" }}
+                              style={{ whiteSpace: 'nowrap' }}
                               href={data.githubLink}
                             >
                               View Code
                             </Button>
                             <Button
                               variant="link"
-                              style={{ whiteSpace: "nowrap" }}
+                              style={{ whiteSpace: 'nowrap' }}
                             >
                               View Demo
                             </Button>
@@ -78,15 +76,20 @@ const ProjectCard = ({ projects }) => {
                       </Card.Body>
                     </Accordion.Collapse>
                     <Card.Body>
-                      <Row style={{ justifyContent: "center" }}>
+                      <Row style={{ justifyContent: 'center' }}>
                         <Row>
                           <Col
                             style={{
-                              paddingLeft: "2rem",
-                              paddingRight: "2rem"
+                              paddingLeft: '2rem',
+                              paddingRight: '2rem'
                             }}
                           >
-                            <Card.Text>{data.description}</Card.Text>
+                            <Card.Text className="d-none d-lg-flex">
+                              {data.description}
+                            </Card.Text>
+                            <Card.Text className="d-lg-none">
+                              <ReadMoreReact text={data.description} />
+                            </Card.Text>
                           </Col>
                         </Row>
                       </Row>

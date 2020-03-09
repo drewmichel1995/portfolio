@@ -1,12 +1,14 @@
-import React from "react";
-import ExpandedSkillsCard from "./ExpandedSkillsCard";
-import CompactSkillsCard from "./CompactSkillsCard";
-import "./style.css";
+import React from 'react';
+import ExpandedSkillsCard from './ExpandedSkillsCard';
+import CompactSkillsCard from './CompactSkillsCard';
+import './style.css';
 
 const SkillsCard = ({ data }) => {
   return (
-    <div id="skills" className="skills-card">
-      <h2 className="section-header">Skills</h2>
+    <div className="skills-card section-header">
+      <h2 className="white-text" id="skills">
+        Skills
+      </h2>
       <hr />
       <div className="skills-container">
         <ExpandedSkillsCard data={data} />

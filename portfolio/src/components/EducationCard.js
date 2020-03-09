@@ -1,18 +1,18 @@
-import React from "react";
-import { Card, Row, Col, Tab, Nav, Carousel } from "react-bootstrap";
-import ImageHelper from "./ImageHelper";
-import StackComponent from "./StackComponent";
+import React from 'react';
+import { Card, Row, Col, Tab, Nav, Carousel } from 'react-bootstrap';
+import ReadMoreReact from 'read-more-react';
+import ImageHelper from './ImageHelper';
 
-const toppad = window.innerWidth < 480 ? "0rem" : "0rem";
+const toppad = window.innerWidth < 480 ? '0rem' : '0rem';
 
 const EducationCard = ({ education }) => {
   return (
-    <div>
-      <h2 className="section-header" id="education">
+    <div className="section-header">
+      <h2 id="education" className="white-text">
         Education
       </h2>
       <hr />
-      <Carousel interval={null}>
+      <Carousel interval={null} controls={false} touch={true}>
         {education.map(data => (
           <Carousel.Item>
             <Row className="justify-content-center experience-card">
@@ -22,22 +22,22 @@ const EducationCard = ({ education }) => {
                   defaultActiveKey="description"
                 >
                   <Card
-                    style={{ borderRadius: "1rem" }}
+                    style={{ borderRadius: '1rem' }}
                     className="align-items-center"
                   >
                     <Card.Header
                       className="experience-card-header"
-                      style={{ overflow: "hidden" }}
+                      style={{ overflow: 'hidden' }}
                     >
-                      <Row className="justify-content-center align-items-center mb-1">
+                      <Row className="justify-content-center align-items-center">
                         <Col xs="auto">
                           <ImageHelper mode={data.mode} />
                         </Col>
                         <Col
                           style={{
                             paddingTop: toppad,
-                            paddingLeft: "3rem",
-                            paddingRight: "3rem"
+                            paddingLeft: '3rem',
+                            paddingRight: '3rem'
                           }}
                           xs="auto"
                         >
@@ -57,36 +57,24 @@ const EducationCard = ({ education }) => {
                             </Card.Subtitle>
                           </Row>
                           <Row className="align-items-center justify-content-center">
-                            <Card.Subtitle className="mb-2 text-muted no-wrap text-align-center">
+                            <Card.Subtitle className="text-muted no-wrap text-align-center">
                               {data.location}
                             </Card.Subtitle>
                           </Row>
                         </Col>
                       </Row>
-                      <Nav fill activeKey="description" variant="tabs">
-                        <Nav.Item>
-                          <Nav.Link eventKey="description">
-                            Description
-                          </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                          <Nav.Link eventKey="tech">Classes</Nav.Link>
-                        </Nav.Item>
-                      </Nav>
                     </Card.Header>
                     <Card.Body>
-                      <Tab.Content className="justify-content-center">
-                        <Tab.Pane eventKey="description">
-                          <Row>
-                            <Col>
-                              <Card.Text>{data.description}</Card.Text>
-                            </Col>
-                          </Row>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="tech">
-                          <Col></Col>
-                        </Tab.Pane>
-                      </Tab.Content>
+                      <Row>
+                        <Col>
+                          <Card.Text className="d-none d-lg-flex">
+                            {data.description}
+                          </Card.Text>
+                          <Card.Text className="d-lg-none">
+                            <ReadMoreReact text={data.description} />
+                          </Card.Text>
+                        </Col>
+                      </Row>
                     </Card.Body>
                   </Card>
                 </Tab.Container>

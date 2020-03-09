@@ -123,7 +123,7 @@
     {
       "mode": "tntech",
       "organization": "Tennessee Technological University",
-      "credential": "Bachelor of Computer Science",
+      "credential": "BE, Computer Science",
       "suppCredential": "Concentration in Cyber Security",
       "dates": "August 2014 - May 2018",
       "location": "Cookeville, TN",
@@ -135,6 +135,26 @@
         { "name": "Operating Systems" },
         { "name": "Reverse Engineering Malware" }
       ]
+    },
+    {
+      "mode": "comptia",
+      "organization": "CompTIA",
+      "credential": "Security+",
+      "suppCredential": "https://www.certmetrics.com/comptia/public/verification.aspx?code=4F0894SW84K0F75F",
+      "dates": "February 2020",
+      "location": "Cookeville, TN",
+      "description": "To reinforce my knowledge and skills of cyber security, I decided to pursue a Sec+ certification from CompTIA. I completed the SY0-501 version of the exam, which was the most current at the time of testing.",
+      "classes": [{ "name": "Reverse Engineering Malware" }]
+    },
+    {
+      "mode": "devops",
+      "organization": "DevOps Institue",
+      "credential": "DevOps Foundation",
+      "suppCredential": "",
+      "dates": "November 2018",
+      "location": "Cookeville, TN",
+      "description": "To further my understanding of DevOps best practices, I decided to pursue this certification. Through obtaining this certification, I became familiar with the numerous ways that developers can aide in streamlining the deployment pipeline and process.",
+      "classes": [{ "name": "Reverse Engineering Malware" }]
     }
   ],
   "projects": [
@@ -164,6 +184,34 @@
       ],
       "description": "A Subdomain Scanner Web UI being served by a custom Python server using the OWASP developed AMASS Subdomain Scanner utility.",
       "githubLink": "https://github.com/drewmichel1995/PenTest-Docker",
+      "demoLink": ""
+    },
+    {
+      "title": "Portfolio",
+      "stack": [
+        {
+          "name": "NodeJS",
+          "icon": "nodejs"
+        },
+        {
+          "name": "React",
+          "icon": "react"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "mongodb"
+        },
+        {
+          "name": "NGINX",
+          "icon": "nginx"
+        },
+        {
+          "name": "Docker",
+          "icon": "docker"
+        }
+      ],
+      "description": "The portfolio that you are currently viewing. I developed this responsive portfolio to run in Docker with a React frontend, NodeJS backend, MongoDB, and NGINX reverse proxy. The backend functions as a data manipulation tool and an email engine. Other notable technologies used in the application include React Bootstrap, Express, a custom REST API, and Google APIs.",
+      "githubLink": "https://github.com/drewmichel1995/portfolio",
       "demoLink": ""
     }
   ]

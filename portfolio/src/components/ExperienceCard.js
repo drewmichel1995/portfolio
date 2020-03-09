@@ -1,18 +1,19 @@
-import React from "react";
-import { Card, Row, Col, Tab, Nav, Carousel } from "react-bootstrap";
-import ImageHelper from "./ImageHelper";
-import StackComponent from "./StackComponent";
+import React from 'react';
+import { Card, Row, Col, Tab, Nav, Carousel } from 'react-bootstrap';
+import ReadMoreReact from 'read-more-react';
+import ImageHelper from './ImageHelper';
+import StackComponent from './StackComponent';
 
-const toppad = window.innerWidth < 480 ? "0rem" : "0rem";
+const toppad = window.innerWidth < 480 ? '0rem' : '0rem';
 
 const ExperienceCard = ({ experience }) => {
   return (
-    <div>
-      <h2 className="section-header" id="experience">
+    <div className="section-header">
+      <h2 id="experience" className="white-text">
         Experience
       </h2>
       <hr />
-      <Carousel interval={null}>
+      <Carousel interval={null} controls={false} touch={true}>
         {experience.map(data => (
           <Carousel.Item>
             <Row className="justify-content-center experience-card">
@@ -22,12 +23,12 @@ const ExperienceCard = ({ experience }) => {
                   defaultActiveKey="description"
                 >
                   <Card
-                    style={{ borderRadius: "1rem" }}
+                    style={{ borderRadius: '1rem' }}
                     className="align-items-center"
                   >
                     <Card.Header
                       className="experience-card-header"
-                      style={{ overflow: "hidden" }}
+                      style={{ overflow: 'hidden' }}
                     >
                       <Row className="justify-content-center align-items-center mb-1">
                         <Col xs="auto">
@@ -36,8 +37,8 @@ const ExperienceCard = ({ experience }) => {
                         <Col
                           style={{
                             paddingTop: toppad,
-                            paddingLeft: "3rem",
-                            paddingRight: "3rem"
+                            paddingLeft: '3rem',
+                            paddingRight: '3rem'
                           }}
                           xs="auto"
                         >
@@ -74,7 +75,12 @@ const ExperienceCard = ({ experience }) => {
                         <Tab.Pane eventKey="description">
                           <Row>
                             <Col>
-                              <Card.Text>{data.description}</Card.Text>
+                              <Card.Text className="d-none d-lg-flex">
+                                {data.description}
+                              </Card.Text>
+                              <Card.Text className="d-lg-none">
+                                <ReadMoreReact text={data.description} />
+                              </Card.Text>
                             </Col>
                           </Row>
                         </Tab.Pane>

@@ -1,29 +1,33 @@
-import React, { useState } from "react";
-import { Button, Modal, Form, Row, Col } from "react-bootstrap";
-import { SocialIcon } from "react-social-icons";
-import ImageHelper from "./ImageHelper";
+import React, { useState } from 'react';
+import { Button, Modal, Form, Row, Col } from 'react-bootstrap';
+import { SocialIcon } from 'react-social-icons';
+import ImageHelper from './ImageHelper';
+import resume from '../images/resume.pdf';
 
 export default function EmailModal() {
   const [show, setShow] = useState(false);
-  const [fromEmail, setFromEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [emailContent, setEmailContent] = useState("");
+  const [fromEmail, setFromEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [emailContent, setEmailContent] = useState('');
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const sendEmail = () => {
-    var url = "/server/email";
+    var url = '/server/email';
 
     const payload = {
-      fromEmail: fromEmail,
       subject: subject,
-      emailContent: emailContent
+      emailContent: fromEmail + '\r\n' + emailContent
     };
 
-    console.log(payload);
+    console.log(JSON.stringify(payload));
 
-    fetch(url, { method: "post", body: JSON.stringify(payload) })
+    fetch(url, {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
       .then(res => res.json())
       .then(result => {
         setShow(false);

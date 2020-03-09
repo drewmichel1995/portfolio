@@ -1,16 +1,20 @@
-import saicImg from "../images/saic-logo.png";
-import averittImg from "../images/averitt.png";
-import profileImg from "../images/profile.jpg";
-import iconImg from "../images/favicon.png";
-import tntechImg from "../images/tntech.png";
-import React from "react";
+import saicImg from '../images/saic-logo.png';
+import averittImg from '../images/averitt.png';
+import profileImg from '../images/profile.jpg';
+import iconImg from '../images/favicon.png';
+import tntechImg from '../images/tntech.png';
+import comptiaImg from '../images/comptia.png';
+import devopsImg from '../images/devops.png';
+import React from 'react';
 
 const iconObj = {
-  "saic": saicImg,
-  "averitt": averittImg,
-  "profile": profileImg,
-  "icon": iconImg,
-  "tntech": tntechImg
+  'saic': saicImg,
+  'averitt': averittImg,
+  'profile': profileImg,
+  'icon': iconImg,
+  'tntech': tntechImg,
+  'comptia': comptiaImg,
+  'devops': devopsImg
 };
 
 class ImageHelper extends React.Component {
@@ -18,10 +22,10 @@ class ImageHelper extends React.Component {
     return (
       <img
         style={{
-          borderRadius: "100%",
+          borderRadius: '100%',
           width: this.props.width,
 
-          justifyContent: "center"
+          justifyContent: 'center'
         }}
         alt={this.props.mode}
         src={iconObj[this.props.mode]}
@@ -32,7 +36,7 @@ class ImageHelper extends React.Component {
 }
 
 ImageHelper.defaultProps = {
-  width: "7rem"
+  width: '7rem'
 };
 
 export default ImageHelper;
