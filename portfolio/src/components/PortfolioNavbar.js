@@ -9,20 +9,20 @@ function PortfolioNavbar({ name }) {
 
   function scrollToTop() {
     let width = window.innerWidth;
-    width < 992 ? setExpand(false) : setExpand(expandNav);
+    width < 768 ? setExpand(false) : setExpand(expandNav);
     scroll.scrollToTop();
   }
 
   function toggleExpand() {
     let width = window.innerWidth;
-    width < 992 ? setExpand(!expandNav) : setExpand(expandNav);
+    width < 768 ? setExpand(!expandNav) : setExpand(expandNav);
   }
 
   return (
     <Navbar
       bg="dark"
       variant="dark"
-      expand="lg"
+      expand="md"
       fixed="top"
       expanded={expandNav}
     >

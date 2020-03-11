@@ -122,7 +122,7 @@
   "education": [
     {
       "mode": "tntech",
-      "organization": "Tennessee Technological University",
+      "organization": "Tennessee Tech University",
       "credential": "BE, Computer Science",
       "suppCredential": "Concentration in Cyber Security",
       "dates": "August 2014 - May 2018",
@@ -140,7 +140,7 @@
       "mode": "comptia",
       "organization": "CompTIA",
       "credential": "Security+",
-      "suppCredential": "https://www.certmetrics.com/comptia/public/verification.aspx?code=4F0894SW84K0F75F",
+      "suppCredential": "",
       "dates": "February 2020",
       "location": "Cookeville, TN",
       "description": "To reinforce my knowledge and skills of cyber security, I decided to pursue a Sec+ certification from CompTIA. I completed the SY0-501 version of the exam, which was the most current at the time of testing.",
