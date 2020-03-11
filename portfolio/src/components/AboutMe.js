@@ -5,6 +5,7 @@ import SkillsCard from "./SkillsCard";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
 import EducationCard from "./EducationCard";
+import PDFViewer from "./PDFViewer";
 
 class AboutMe extends React.Component {
   constructor(props) {
