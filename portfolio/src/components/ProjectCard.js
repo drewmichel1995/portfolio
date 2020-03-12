@@ -15,7 +15,7 @@ import './style.css';
 
 const ProjectCard = ({ projects }) => {
   return (
-    <div className="section-header">
+    <div className="section-header card-bottom">
       <h2 id="projects" className="white-text">
         Projects
       </h2>

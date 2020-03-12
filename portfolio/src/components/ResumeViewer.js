@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Button,
   Modal,
   ButtonGroup,
   Dropdown,
   DropdownButton
-} from "react-bootstrap";
-import ImageHelper from "./ImageHelper";
+} from 'react-bootstrap';
+import ImageHelper from './ImageHelper';
 
-export default function EmailModal() {
+export default function ResumeViewer() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

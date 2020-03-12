@@ -156,6 +156,14 @@ ul li {
   margin-top: 13rem;
 }
 
+.card-bottom {
+  margin-bottom: 5rem;
+}
+
 .read-more-button {
   color: blue !important;
+}
+
+.bg-gainsboro {
+  background-color: gainsboro;
 }

@@ -8,7 +8,7 @@ const toppad = window.innerWidth < 480 ? '0rem' : '0rem';
 
 const ExperienceCard = ({ experience }) => {
   return (
-    <div className="section-header">
+    <div className="section-header card-bottom">
       <h2 id="experience" className="white-text">
         Experience
       </h2>

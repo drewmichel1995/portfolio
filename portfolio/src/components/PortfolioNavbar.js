@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Navbar, Nav } from "react-bootstrap";
-import SocialRow from "./SocialRow";
-import ImageHelper from "./ImageHelper";
-import PDFViewer from "./PDFViewer";
-import { Link, animateScroll as scroll } from "react-scroll";
+import React, { useState } from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
+import SocialRow from './SocialRow';
+import ImageHelper from './ImageHelper';
+import ResumeViewer from './ResumeViewer';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 function PortfolioNavbar({ name }) {
   const [expandNav, setExpand] = useState(false);
@@ -89,7 +89,7 @@ function PortfolioNavbar({ name }) {
             Projects
           </Nav.Item>
           <Nav.Item className="nav-item-link nav-link">
-            <PDFViewer />
+            <ResumeViewer />
           </Nav.Item>
         </Nav>
         <SocialRow />

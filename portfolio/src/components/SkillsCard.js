@@ -5,7 +5,7 @@ import './style.css';
 
 const SkillsCard = ({ data }) => {
   return (
-    <div className="skills-card section-header">
+    <div className="skills-card section-header card-bottom">
       <h2 className="white-text" id="skills">
         Skills
       </h2>

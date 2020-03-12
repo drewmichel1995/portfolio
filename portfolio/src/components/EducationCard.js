@@ -2,12 +2,13 @@ import React from 'react';
 import { Card, Row, Col, Tab, Nav, Carousel } from 'react-bootstrap';
 import ReadMoreReact from 'read-more-react';
 import ImageHelper from './ImageHelper';
+import DegreeViewer from './DegreeViewer';
 
 const toppad = window.innerWidth < 480 ? '0rem' : '0rem';
 
 const EducationCard = ({ education }) => {
   return (
-    <div className="section-header">
+    <div className="section-header card-bottom">
       <h2 id="education" className="white-text">
         Education
       </h2>
@@ -61,6 +62,12 @@ const EducationCard = ({ education }) => {
                               {data.location}
                             </Card.Subtitle>
                           </Row>
+                          {data.organization ===
+                            'Tennessee Tech University' && (
+                            <Row className="align-items-center justify-content-center">
+                              <DegreeViewer />
+                            </Row>
+                          )}
                         </Col>
                       </Row>
                     </Card.Header>

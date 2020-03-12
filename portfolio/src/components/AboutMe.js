@@ -1,11 +1,10 @@
-import React, { Component } from "react";
-import { Col } from "react-bootstrap";
-import IntroductionCard from "./IntroductionCard";
-import SkillsCard from "./SkillsCard";
-import ExperienceCard from "./ExperienceCard";
-import ProjectCard from "./ProjectCard";
-import EducationCard from "./EducationCard";
-import PDFViewer from "./PDFViewer";
+import React, { Component } from 'react';
+import { Col } from 'react-bootstrap';
+import IntroductionCard from './IntroductionCard';
+import SkillsCard from './SkillsCard';
+import ExperienceCard from './ExperienceCard';
+import ProjectCard from './ProjectCard';
+import EducationCard from './EducationCard';
 
 class AboutMe extends React.Component {
   constructor(props) {
@@ -20,9 +19,9 @@ class AboutMe extends React.Component {
   }
 
   componentDidMount() {
-    var url = "/server/portfolioinfo";
+    var url = '/server/portfolioinfo';
 
-    fetch(url, { method: "get" })
+    fetch(url, { method: 'get' })
       .then(res => res.json())
       .then(result => {
         this.setState({
