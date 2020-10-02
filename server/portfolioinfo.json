@@ -2,9 +2,9 @@
   "profile": {
     "name": "Drew Michel",
     "mode": "profile",
-    "age": "24",
+    "age": "25",
     "jobTitle": "Full Stack Engineer",
-    "location": "Cookeville, TN"
+    "location": "Denver, CO"
   },
 
   "skills": [
@@ -59,8 +59,8 @@
       "org": "SAIC",
       "jobTitle": "Full Stack Engineer",
       "dates": "March 2019 - Present",
-      "location": "Cookeville, TN",
-      "description": "Currently, I am a software engineer in Cookeville, Tennessee for SAIC. My current role includes developing applications and tools for a team of model based systems engineers. Through this role, I have become confident in my ability to develop and maintain full stack containerized apps, generally utilizing a Java backend, React or Angular frontend, and an Nginx reverse proxy service. Utilizing Nginx and Docker has allowed me to streamline deployment and configuration for these applications. These applications range from reporting services to interactive tools to help our engineers visualize model based data.",
+      "location": "Remote (Denver, CO)",
+      "description": "Currently, I am a remote software engineer for SAIC. My current role includes developing applications and tools for a team of model based systems engineers. Through this role, I have become confident in my ability to develop and maintain full stack containerized apps, generally utilizing a NodeJS or Java backend, React or Angular frontend, and an Nginx reverse proxy service. Utilizing Nginx and Docker has allowed me to streamline deployment and configuration for these applications. These applications range from reporting services to interactive tools to help our engineers visualize model based data.",
       "mode": "saic",
       "skills": [
         { "name": "React", "icon": "react" },
@@ -123,11 +123,11 @@
     {
       "mode": "tntech",
       "organization": "Tennessee Tech University",
-      "credential": "BE, Computer Science",
+      "credential": "BS, Computer Science",
       "suppCredential": "Concentration in Cyber Security",
       "dates": "August 2014 - May 2018",
       "location": "Cookeville, TN",
-      "description": "I spent my time at Tennessee Tech learning about computers",
+      "description": "I spent my time at Tennessee Tech gaining an understanding of core programming principles, data structures, object oriented programming, computer networking, application lifecycle management, and much more. The computer science curriculumn at TTU does an amazing job at introducing students to the fundamentals of computer science and equips students with the tools needed to gain proficiency in any computer science discipline.",
       "classes": [
         { "name": "Design of Algorithms" },
         { "name": "Object Oriented Programming" },
@@ -212,6 +212,57 @@
       ],
       "description": "The portfolio that you are currently viewing. I developed this responsive portfolio to run in Docker with a React frontend, NodeJS backend, MongoDB, and NGINX reverse proxy. The backend functions as a data manipulation tool and an email engine. Other notable technologies used in the application include React Bootstrap, Express, a custom REST API, and Google APIs.",
       "githubLink": "https://github.com/drewmichel1995/portfolio",
+      "demoLink": ""
+    },
+    {
+      "title": "Traceability Matrix",
+      "stack": [
+        {
+          "name": "Java",
+          "icon": "java"
+        },
+        {
+          "name": "React",
+          "icon": "react"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "mongodb"
+        },
+        {
+          "name": "NGINX",
+          "icon": "nginx"
+        },
+        {
+          "name": "Docker",
+          "icon": "docker"
+        }
+      ],
+      "description": "This tracebility matrix is used to trace links between requirements modules hosted on an IBM Jazz Requirements Management Server. At SAIC our engineers use this tool to help visualize aspects of their systems development. Originally, this application was supposed to be a standalone Javascript widget, but as I gained an understanding of the problem I realized that I would need to engineer a much more robust solution. For a full list of challenges that had to be overcome related to this application please visit the applications GitHub page.",
+      "githubLink": "https://github.com/drewmichel1995/jazz-rtm-system",
+      "demoLink": ""
+    },{
+      "title": "Jira Reports Console",
+      "stack": [
+        {
+          "name": "NodeJS",
+          "icon": "nodejs"
+        },
+        {
+          "name": "React",
+          "icon": "react"
+        },
+        {
+          "name": "NGINX",
+          "icon": "nginx"
+        },
+        {
+          "name": "Docker",
+          "icon": "docker"
+        }
+      ],
+      "description": "This reporting tool generates and handles various Jira reports. One report automatically runs each week to post a weekly status update on each task to Confluence, and various other reports are ran on demand to be viewed as a downloadable csv or by the web application itself.",
+      "githubLink": "https://github.com/drewmichel1995/jira-reporting-node",
       "demoLink": ""
     }
   ]

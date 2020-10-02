@@ -60,12 +60,12 @@ const ProjectCard = ({ projects }) => {
                             >
                               View Code
                             </Button>
-                            <Button
+                            {data.demoLink != "" && <Button
                               variant="link"
                               style={{ whiteSpace: 'nowrap' }}
                             >
                               View Demo
-                            </Button>
+                            </Button>}
                           </ButtonGroup>
                         </Col>
                       </Row>

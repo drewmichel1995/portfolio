@@ -5,7 +5,7 @@ import iconImg from '../images/favicon.png';
 import tntechImg from '../images/tntech.png';
 import comptiaImg from '../images/comptia.png';
 import devopsImg from '../images/devops.png';
-import resumeImg from '../images/resume.jpg';
+import resumeImg from '../images/resume.png';
 import degreeImg from '../images/degree.jpg';
 import React from 'react';
 
