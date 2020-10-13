@@ -6,7 +6,7 @@ import {
   ButtonGroup,
   Button,
   Accordion,
-  Carousel
+  Carousel,
 } from 'react-bootstrap';
 import ReadMoreReact from 'read-more-react';
 import DevIcon from 'devicon-react-svg';
@@ -21,7 +21,7 @@ const ProjectCard = ({ projects }) => {
       </h2>
       <hr />
       <Carousel interval={null} controls={false} touch={true}>
-        {projects.map(data => (
+        {projects.map((data) => (
           <Carousel.Item>
             <Row className="justify-content-center projects-card">
               <Col md={{ span: 6 }}>
@@ -43,7 +43,7 @@ const ProjectCard = ({ projects }) => {
                             eventKey="0"
                             className="stack-toggle"
                           >
-                            {data.stack.map(item => (
+                            {data.stack.map((item) => (
                               <DevIcon
                                 icon={item.icon}
                                 style={{ width: '2rem' }}
@@ -57,15 +57,18 @@ const ProjectCard = ({ projects }) => {
                               variant="link"
                               style={{ whiteSpace: 'nowrap' }}
                               href={data.githubLink}
+                              target="_blank"
                             >
                               View Code
                             </Button>
-                            {data.demoLink != "" && <Button
-                              variant="link"
-                              style={{ whiteSpace: 'nowrap' }}
-                            >
-                              View Demo
-                            </Button>}
+                            {data.demoLink != '' && (
+                              <Button
+                                variant="link"
+                                style={{ whiteSpace: 'nowrap' }}
+                              >
+                                View Demo
+                              </Button>
+                            )}
                           </ButtonGroup>
                         </Col>
                       </Row>
@@ -81,7 +84,7 @@ const ProjectCard = ({ projects }) => {
                           <Col
                             style={{
                               paddingLeft: '2rem',
-                              paddingRight: '2rem'
+                              paddingRight: '2rem',
                             }}
                           >
                             <Card.Text className="d-none d-lg-flex">
