@@ -12,11 +12,11 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-  refresh_token: process.env.GMAIL_REFRESH_TOKEN
+  refresh_token: process.env.GMAIL_REFRESH_TOKEN,
 });
 const accessToken = oauth2Client.getAccessToken();
 
-router.post('/', function(req, res) {
+router.post('/', function (req, res) {
   res.set('Content-Type', 'application/json');
 
   const smtpTransport = nodemailer.createTransport({
@@ -27,15 +27,15 @@ router.post('/', function(req, res) {
       clientId: process.env.GMAIL_CLIENTID,
       clientSecret: process.env.GMAIL_SECRET,
       refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-      accessToken: accessToken
-    }
+      accessToken: accessToken,
+    },
   });
   console.log(req.body);
   var mailOptions = {
     from: req.body.fromEmail,
     to: 'drewmichel1995@gmail.com',
     subject: 'fromPortfolio: ' + req.body.subject,
-    text: req.body.emailContent
+    text: req.body.emailContent,
   };
 
   smtpTransport.sendMail(mailOptions, (error, response) => {
