@@ -7,6 +7,7 @@ import comptiaImg from '../images/comptia.png';
 import devopsImg from '../images/devops.png';
 import resumeImg from '../images/resume.jpg';
 import degreeImg from '../images/degree.jpg';
+import awsccpImg from '../images/aws_ccp.png';
 import React from 'react';
 
 const iconObj = {
@@ -18,7 +19,8 @@ const iconObj = {
   'comptia': comptiaImg,
   'devops': devopsImg,
   'resume': resumeImg,
-  'degree': degreeImg
+  'degree': degreeImg,
+  'awsccp': awsccpImg
 };
 
 class ImageHelper extends React.Component {
